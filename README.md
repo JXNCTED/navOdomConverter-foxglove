@@ -8,10 +8,8 @@ It renders odometry in the 3D panel as:
 
 - a body cube
 - a heading arrow
-- a linear-velocity line (when non-zero)
 
 ## Develop
-
 
 To build and install the extension into your local Foxglove desktop app, run:
 
