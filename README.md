@@ -1,5 +1,7 @@
 # navOdomConverter
 
+/![demo](./img/demo.png) 
+
 This extension registers a schema message converter for ROS1 `nav_msgs/Odometry`:
 
 - `nav_msgs/Odometry` -> `foxglove.SceneUpdate`
