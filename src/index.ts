@@ -130,10 +130,12 @@ function odometryToSceneUpdate(
 }
 
 export function activate(extensionContext: ExtensionContext): void {
-  extensionContext.registerMessageConverter<RosOdometry>({
-    type: "schema",
-    fromSchemaName: "nav_msgs/Odometry",
-    toSchemaName: "foxglove.SceneUpdate",
-    converter: odometryToSceneUpdate,
-  });
+  for (const fromSchemaName of ["nav_msgs/Odometry", "nav_msgs/msg/Odometry"] as const) {
+    extensionContext.registerMessageConverter<RosOdometry>({
+      type: "schema",
+      fromSchemaName,
+      toSchemaName: "foxglove.SceneUpdate",
+      converter: odometryToSceneUpdate,
+    });
+  }
 }

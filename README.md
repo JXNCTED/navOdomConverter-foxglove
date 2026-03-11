@@ -2,9 +2,10 @@
 
 ![demo](./img/demo.png) 
 
-This extension registers a schema message converter for ROS1 `nav_msgs/Odometry`:
+This extension registers schema message converters for both ROS1 and ROS2 odometry:
 
-- `nav_msgs/Odometry` -> `foxglove.SceneUpdate`
+- `nav_msgs/Odometry` (ROS1) -> `foxglove.SceneUpdate`
+- `nav_msgs/msg/Odometry` (ROS2) -> `foxglove.SceneUpdate`
 
 It renders odometry in the 3D panel as:
 
@@ -25,8 +26,7 @@ Open the Foxglove desktop (or `ctrl-R` to refresh if it is already open). Your e
 
 1. Open Foxglove Desktop.
 2. Add a 3D panel to your layout.
-3. Connect to your ROS1 source and select a topic with schema `nav_msgs/Odometry`.
+3. Connect to your ROS1 or ROS2 source and select a topic with schema `nav_msgs/Odometry` or `nav_msgs/msg/Odometry`.
 4. Add that topic in the 3D panel.
 
 Foxglove will apply the converter automatically and visualize the generated `SceneUpdate` markers.
-
